@@ -1,6 +1,8 @@
 import React from "react";
-import Logo from "./Logo";
-import Navbar from "./Navbar";
+import Logo from "../Logo/Logo";
+import Navbar from "../Navbar/Navbar";
+import "./_header.scss";
+
 
 
 export default function Header() {
