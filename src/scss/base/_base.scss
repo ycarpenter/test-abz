@@ -1,0 +1,20 @@
+@use "../abstracts/"as *;
+
+body {
+  width: 100vw;
+  @extend %font-primary;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
