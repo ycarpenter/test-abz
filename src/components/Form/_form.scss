@@ -1,1 +1,31 @@
 @use "../../scss/abstracts/"as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: calcRem(380px);
+  margin: 0 auto;
+}
+
+[type="text"],
+[type="email"],
+[type="tel"] {
+  padding: calcRem(14px) calcRem(16px);
+  width: 100%;
+  margin-bottom: calcRem(50px);
+  border: 1px solid $color-input;
+  border-radius: 4px;
+  background: transparent;
+  color: $color-input;
+}
+
+[type="tel"] {
+  margin-bottom: calcRem(4px);
+}
+
+.form__tel-label {
+  @include font(12px, 14px);
+  color: $color-label;
+  text-align: left;
+  padding-left: calcRem(16px);
+}
