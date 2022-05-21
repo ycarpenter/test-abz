@@ -1,0 +1,24 @@
+@use "../../scss/abstracts/"as *;
+
+.hero {
+  padding: calcRem(164px) 0 calcRem(163px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: $color-bg;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), no-repeat bottom/135% url(../../image/pexels-alexandr-podvalny-1227513.jpeg);
+
+  &__heading {
+    margin-bottom: calcRem(21px);
+    max-width: calcRem(380px);
+    @include font(40px, 40px);
+  }
+
+  &__text {
+    max-width: calcRem(380px);
+    margin-bottom: calcRem(32px);
+    @include font(16px);
+  }
+}

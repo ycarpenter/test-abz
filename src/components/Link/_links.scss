@@ -4,7 +4,13 @@
   @extend %font-primary;
   display: inline-block;
   padding: 4px 0;
+  border-radius: 80px;
+  min-width: calcRem(100px);
   text-align: center;
   background-color: $color-primary;
-  border-radius: 80px;
+  color: $color-text;
+}
+
+.navbar__menu-link {
+  margin: 13px 0;
 }
