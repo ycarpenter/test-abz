@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "../Link/Link"
 import "../Navbar/_nav.scss";
 
 export default function Navbar() {
@@ -6,12 +7,16 @@ export default function Navbar() {
     <nav className="navbar">
       <ul className="navbar__menu">
         <li className="navbar__menu-item">
-          <a className="navbar__menu-link link"
-            href="#">Users</a>
+          <Link
+            text="Users"
+            className="navbar__menu-link link"
+          />
         </li>
         <li className="navbar__menu-item">
-          <a className="navbar__menu-link link"
-            href="#">Sign up</a>
+          <Link
+            text="Sign up"
+            className="navbar__menu-link link"
+          />
         </li>
       </ul>
     </nav>
