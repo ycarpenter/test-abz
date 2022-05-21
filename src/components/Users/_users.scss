@@ -1,0 +1,8 @@
+@use "../../scss/abstracts/"as *;
+
+.users__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calcRem(29px);
+  padding-bottom: calcRem(48px);
+}

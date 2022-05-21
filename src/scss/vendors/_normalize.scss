@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -22,7 +23,6 @@ h1 {
 }
 
 hr {
-  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
