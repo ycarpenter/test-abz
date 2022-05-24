@@ -9,6 +9,11 @@
   text-align: center;
   background-color: $color-primary;
   color: $color-text;
+
+  :disabled {
+    background-color: $color-disabled;
+    color: $color-bg-user;
+  }
 }
 
 .navbar__menu-link {

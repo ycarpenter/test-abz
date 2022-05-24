@@ -8,14 +8,14 @@ export default function Navbar() {
       <ul className="navbar__menu">
         <li className="navbar__menu-item">
           <Link
-            href="#"
+            href="#users"
             text="Users"
             className="navbar__menu-link link"
           />
         </li>
         <li className="navbar__menu-item">
           <Link
-            href="#"
+            href="#sign-up"
             text="Sign up"
             className="navbar__menu-link link"
           />

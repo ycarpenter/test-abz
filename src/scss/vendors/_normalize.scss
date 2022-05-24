@@ -9,17 +9,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  margin: 0;
-}
-
 main {
   display: block;
 }
 
 h1 {
   font-size: 2em;
-  margin: 0;
 }
 
 hr {
@@ -87,7 +82,6 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
-  margin: 0;
 }
 
 button,
@@ -123,11 +117,6 @@ button:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
 
 legend {
   box-sizing: border-box;

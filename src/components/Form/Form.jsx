@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Form/_form.scss";
+import Link from "../Link/Link";
 
 export default function Form() {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,9 +12,43 @@ export default function Form() {
     photo: ""
   })
 
+  const [positions, setPositions] = useState([]);
+
+  const getPositions = async () => {
+    const res = await fetch("https://frontend-test-assignment-api.abz.agency/api/v1/positions");
+    const data = await res.json();
+    setPositions(data.positions);
+  }
+
+  const position = positions.map(pos => {
+    return <label key={pos.id}>
+      <input
+        key={pos.id}
+        type="radio"
+        name="position"
+        value={pos.name}
+      />{pos.name}
+    </label>
+  })
+
+  useEffect(() => {
+    getPositions()
+  }, [])
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }))
+  }
+
+  console.log(formData)
+
+
 
   return (
-    <section className="section">
+    <section className="section" id="sign-up">
       <h2 className="section__heading">Working with POST request</h2>
       <form className="form">
         <label>
@@ -21,6 +57,7 @@ export default function Form() {
             placeholder="Your name"
             name="name"
             value={formData.name}
+            onChange={handleChange}
           />
         </label>
         <label>
@@ -29,6 +66,7 @@ export default function Form() {
             placeholder="Email"
             name="email"
             value={formData.email}
+            onChange={handleChange}
           />
         </label>
         <input
@@ -37,27 +75,29 @@ export default function Form() {
           placeholder="Phone"
           name="phone"
           value={formData.phone}
+          onChange={handleChange}
         />
         <label htmlFor="tel" className="form__tel-label">+38 (XXX) XXX - XX - XX</label>
 
-        <fieldset>
+        <fieldset className="positions">
           <legend>Select your position</legend>
-          <input
-            type="radio"
-            id="frontend"
-            value="frontend-developer"
-            name="position"
-          />
-          <label htmlFor="frontend">Frontend developer</label>
+          {position}
         </fieldset>
-        <label>
+        <label className="file-label">
           <input
             type="file"
             id="photo"
             value={formData.photo}
             accept=".jpg, .jpeg, .png"
+            onChange={handleChange}
           />
-          Upload</label>
+          <span className="file-upload">Upload</span>
+          <span className="file-placeholder">Upload your photo</span></label>
+        <Link
+          text="Sign up"
+          className="submit-link link"
+          isDisabled="true"
+        />
       </form>
     </section >
   )
