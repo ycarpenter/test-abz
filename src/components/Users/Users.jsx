@@ -14,7 +14,22 @@ export default function Users() {
     const data = await res.json();
     setUsers(data.users)
     setLastPage(data.total_pages)
-    console.log(counter)
+  }
+
+  React.useEffect(() => {
+    getUsers()
+    console.log('render' + counter)
+  }, [counter])
+
+  function handleUsers(event) {
+    event.preventDefault()
+    setCounter(prevState =>
+      prevState + 1
+    )
+
+    // const userArray = userCard.push(getUsers())
+    getUsers();
+    console.log(users)
   }
 
   const userCard = users.map(user =>
@@ -27,27 +42,14 @@ export default function Users() {
     />
   )
 
-  React.useEffect(() => {
-    getUsers()
-  }, [])
-
-  function handleUsers(event) {
-    event.preventDefault()
-    setCounter(prevState =>
-      prevState + 1
-    )
-
-    console.log(counter + "=>" + lastPage)
-    getUsers();
-  }
-
   return (
     <section className="section users" id="users">
       <h2 className="section__heading">Working with GET request</h2>
       <div className="users__list">
         {userCard}
+        {console.log(userCard)}
       </div>
-      {(counter === lastPage + 1) ? "" : <Link
+      {(counter === lastPage) ? "" : <Link
         href="#"
         text="Show more"
         className="link user__link"
