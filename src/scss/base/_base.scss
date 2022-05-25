@@ -25,12 +25,17 @@ a {
   text-align: center;
 
   @include media-laptop {
-    max-width: 1024px;
+    max-width: calcRem(1024px);
     padding: 0 calcRem(60px);
   }
 
-  // @include media-tablet {
-  //   max-width: 768px;
+  @include media-tablet {
+    max-width: calcRem(768px);
+    padding: 0 calcRem(32px);
+  }
+
+  // @include media-mobile {
+  //   max-width: calcRem(360px);
   //   padding: 0 calcRem(32px);
   // }
 
