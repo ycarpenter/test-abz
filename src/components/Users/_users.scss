@@ -15,6 +15,7 @@
 
   @include media-mobile {
     grid: auto / 1fr;
-    gap: calcRem(20px);
+    gap: calcRem(19px);
+    padding-bottom: calcRem(49px);
   }
 }
