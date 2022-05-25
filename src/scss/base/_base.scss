@@ -34,10 +34,10 @@ a {
     padding: 0 calcRem(32px);
   }
 
-  // @include media-mobile {
-  //   max-width: calcRem(360px);
-  //   padding: 0 calcRem(32px);
-  // }
+  @include media-mobile {
+    max-width: calcRem(360px);
+    padding: 0 calcRem(16px);
+  }
 
   &__heading {
     padding: calcRem(140px) 0 calcRem(50px);

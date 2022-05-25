@@ -12,4 +12,9 @@
     grid: auto / repeat(2, 1fr);
     gap: calcRem(16px);
   }
+
+  @include media-mobile {
+    grid: auto / 1fr;
+    gap: calcRem(20px);
+  }
 }

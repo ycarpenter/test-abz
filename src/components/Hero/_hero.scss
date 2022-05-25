@@ -1,4 +1,4 @@
-@use "../../scss/abstracts/"as *;
+@use "../../scss/abstracts/" as *;
 
 .hero {
   padding: calcRem(164px) 0 calcRem(163px);
@@ -9,6 +9,20 @@
   text-align: center;
   color: $color-bg;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), no-repeat bottom/135% url(../../image/pexels-alexandr-podvalny-1227513.jpeg);
+
+  @include media-laptop {
+    background-size: 154%;
+  }
+
+  @include media-tablet {
+    padding: calcRem(89px) 0 calcRem(88px);
+    background-size: 159%;
+  }
+
+  @include media-mobile {
+    padding: calcRem(40px) 0 calcRem(71px);
+    background-size: 337%;
+  }
 
   &__heading {
     margin-bottom: calcRem(21px);
