@@ -6,7 +6,7 @@
   display: grid;
   grid: auto auto / repeat(3, 1fr);
   gap: calcRem(29px);
-  padding-bottom: calcRem(48px);
+  padding-bottom: calcRem(47px);
 
   @include media-tablet {
     grid: auto / repeat(2, 1fr);
