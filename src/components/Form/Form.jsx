@@ -21,7 +21,7 @@ export default function Form() {
   }
 
   const position = positions.map(pos => {
-    return <label key={pos.id}>
+    return <label key={pos.id} className="radio-label">
       <input
         key={pos.id}
         type="radio"

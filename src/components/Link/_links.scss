@@ -10,7 +10,11 @@
   background-color: $color-primary;
   color: $color-text;
 
-  :disabled {
+  &:hover {
+    background-color: $color-hover;
+  }
+
+  &:disabled {
     background-color: $color-disabled;
     color: $color-bg-user;
   }
