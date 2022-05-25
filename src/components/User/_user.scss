@@ -1,11 +1,12 @@
-@use "../../scss/abstracts/"as *;
+@use "../../scss/abstracts/" as *;
 
 .user {
-  width: calcRem(370px);
+  max-width: calcRem(370px);
   padding: calcRem(20px);
   border-radius: 10px;
   text-align: center;
   background-color: $color-bg-user;
+
 
   &__img {
     border-radius: 50%;

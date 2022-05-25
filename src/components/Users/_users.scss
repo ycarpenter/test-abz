@@ -1,8 +1,14 @@
-@use "../../scss/abstracts/"as *;
+@use "../../scss/abstracts/" as *;
 
 .users__list {
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
+  display: grid;
+  grid: auto auto / repeat(3, 1fr);
   gap: calcRem(29px);
   padding-bottom: calcRem(48px);
+
+  // @include media-tablet {
+  //   grid: auto / repeat(2, 1fr);
+  // }
 }

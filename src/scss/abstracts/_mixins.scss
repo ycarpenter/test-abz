@@ -1,5 +1,5 @@
-@use '../abstracts/functions'as *;
-@use '../abstracts/variables'as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
 
 @mixin font($size, $height: 26px, $weight: 400, $style: normal) {
   font-size: calcRem($size);

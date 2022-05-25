@@ -1,4 +1,4 @@
-@use "../abstracts/"as *;
+@use "../abstracts/" as *;
 
 body {
   width: 100vw;
@@ -16,12 +16,23 @@ a {
 }
 
 .container {
-  width: 1170px;
+  max-width: calcRem(1170px);
   margin: 0 auto;
 }
 
 .section {
+  margin: 0 auto;
   text-align: center;
+
+  @include media-laptop {
+    max-width: 1024px;
+    padding: 0 calcRem(60px);
+  }
+
+  // @include media-tablet {
+  //   max-width: 768px;
+  //   padding: 0 calcRem(32px);
+  // }
 
   &__heading {
     padding: calcRem(140px) 0 calcRem(50px);
