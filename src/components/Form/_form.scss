@@ -1,4 +1,4 @@
-@use "../../scss/abstracts/"as *;
+@use "../../scss/abstracts/" as *;
 
 .form {
   display: flex;
@@ -10,7 +10,7 @@
 [type="text"],
 [type="email"],
 [type="tel"] {
-  padding: calcRem(14px) calcRem(16px);
+  padding: calcRem(17px) calcRem(16px);
   width: 100%;
   margin-bottom: calcRem(50px);
   border: 1px solid $color-input;
@@ -33,10 +33,15 @@
 
 .positions {
   display: flex;
+  gap: calcRem(7px);
   flex-direction: column;
   margin-bottom: calcRem(47px);
   text-align: left;
   border: none;
+
+  &__title {
+    margin-bottom: calcRem(9px);
+  }
 }
 
 .radio-label {
@@ -62,7 +67,7 @@
 
 .file-label {
   display: flex;
-  margin-bottom: calcRem(50px);
+  margin-bottom: calcRem(48px);
 }
 
 [type="file"] {

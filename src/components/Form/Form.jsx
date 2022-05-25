@@ -80,7 +80,7 @@ export default function Form() {
         <label htmlFor="tel" className="form__tel-label">+38 (XXX) XXX - XX - XX</label>
 
         <fieldset className="positions">
-          <legend>Select your position</legend>
+          <legend className="positions__title">Select your position</legend>
           {position}
         </fieldset>
         <label className="file-label">
