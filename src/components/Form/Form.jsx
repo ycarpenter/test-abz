@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import "../Form/_form.scss";
 import Link from "../Link/Link";
 
@@ -102,3 +104,4 @@ export default function Form() {
     </section >
   )
 }
+
