@@ -5,6 +5,10 @@
   flex-direction: column;
   max-width: calcRem(380px);
   margin: 0 auto calcRem(100px);
+
+  &__label {
+    margin-bottom: calcRem(50px);
+  }
 }
 
 [type="text"],
@@ -12,7 +16,7 @@
 [type="tel"] {
   padding: calcRem(17px) calcRem(16px);
   width: 100%;
-  margin-bottom: calcRem(50px);
+  // margin-bottom: calcRem(50px);
   border: 1px solid $color-input;
   border-radius: 4px;
   background: transparent;
@@ -24,9 +28,9 @@
 }
 
 .form__tel-label {
+  display: flex;
   @include font(12px, 14px);
   color: $color-label;
-  text-align: left;
   padding-left: calcRem(16px);
   padding-bottom: calcRem(25px);
 }
@@ -94,4 +98,21 @@
 
 .submit-link {
   margin: 0 auto;
+}
+
+.error-label {
+  @include font(12px, 14px, 500);
+  color: $color-error;
+}
+
+.error-helper {
+  display: flex;
+  padding-left: calcRem(19px);
+  @include font(12px, 14px);
+  color: $color-error;
+}
+
+.error-border {
+  margin-bottom: calcRem(4px);
+  border: 2px solid $color-error;
 }
