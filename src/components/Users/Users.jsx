@@ -12,13 +12,16 @@ export default function Users() {
   const getUsers = async () => {
     const res = await fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${counter}&count=6`);
     const data = await res.json();
-    setUsers(data.users)
+
+    setUsers(prevState => {
+      return [...prevState, ...data.users];
+    });
+
     setLastPage(data.total_pages)
   }
 
   React.useEffect(() => {
     getUsers()
-    console.log('render' + counter)
   }, [counter])
 
   function handleUsers(event) {
@@ -26,10 +29,6 @@ export default function Users() {
     setCounter(prevState =>
       prevState + 1
     )
-
-    // const userArray = userCard.push(getUsers())
-    getUsers();
-    console.log(users)
   }
 
   const userCard = users.map(user =>
@@ -47,7 +46,6 @@ export default function Users() {
       <h2 className="section__heading">Working with GET request</h2>
       <div className="users__list">
         {userCard}
-        {console.log(userCard)}
       </div>
       {(counter === lastPage) ? "" : <Link
         href="#"

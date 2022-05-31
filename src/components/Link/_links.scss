@@ -1,4 +1,4 @@
-@use "../../scss/abstracts/"as *;
+@use "../../scss/abstracts/" as *;
 
 .link {
   @extend %font-primary;
@@ -10,6 +10,13 @@
   background-color: $color-primary;
   color: $color-text;
 
+  &__submit {
+    max-width: max-content;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+  }
+
   &:hover {
     background-color: $color-hover;
   }
@@ -17,6 +24,7 @@
   &:disabled {
     background-color: $color-disabled;
     color: $color-bg-user;
+    cursor: default;
   }
 }
 

@@ -6,6 +6,7 @@ export default function Link(props) {
     <a className={props.className}
       href={props.href}
       onClick={props.onClick}
+      type={props.type}
     >{props.text}
     </a>
   )

@@ -7,8 +7,27 @@
   margin: 0 auto calcRem(100px);
 
   &__label {
-    margin-bottom: calcRem(50px);
+    position: relative;
+    margin-bottom: calcRem(30px);
   }
+}
+
+.label__placeholder {
+  position: absolute;
+  top: calcRem(14px);
+  left: calcRem(16px);
+  transform-origin: top left;
+  pointer-events: none;
+  color: $color-label;
+  transition: transform 200ms;
+}
+
+input:focus~.label__placeholder,
+input:not(:placeholder-shown)~.label-placeholder {
+  padding: 0 calcRem(4px);
+  transform: translateY(-21px);
+  background-color: #F8F8F8;
+  @include font(12px, 14px, 500);
 }
 
 [type="text"],
@@ -27,12 +46,12 @@
   margin-bottom: calcRem(4px);
 }
 
-.form__tel-label {
+.label__helper {
   display: flex;
   @include font(12px, 14px);
   color: $color-label;
   padding-left: calcRem(16px);
-  padding-bottom: calcRem(25px);
+  // padding-bottom: calcRem(25px);
 }
 
 .positions {
@@ -70,8 +89,12 @@
 }
 
 .file-label {
-  display: flex;
   margin-bottom: calcRem(48px);
+}
+
+.file-container {
+  display: flex;
+  margin-bottom: calcRem(4px);
 }
 
 [type="file"] {
@@ -100,19 +123,21 @@
   margin: 0 auto;
 }
 
-.error-label {
-  @include font(12px, 14px, 500);
-  color: $color-error;
-}
+.error {
+  &__label {
+    @include font(12px, 14px, 500);
+    color: $color-error;
+  }
 
-.error-helper {
-  display: flex;
-  padding-left: calcRem(19px);
-  @include font(12px, 14px);
-  color: $color-error;
-}
+  &__helper {
+    display: flex;
+    padding-left: calcRem(19px);
+    @include font(12px, 14px);
+    color: $color-error;
+  }
 
-.error-border {
-  margin-bottom: calcRem(4px);
-  border: 2px solid $color-error;
+  &__border {
+    margin-bottom: calcRem(4px);
+    border: 2px solid $color-error;
+  }
 }
