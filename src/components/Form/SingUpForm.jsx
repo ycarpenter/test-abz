@@ -1,42 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Formik, Form, useField, useFormikContext } from "formik";
+import { Formik, Form } from "formik";
+import CustomInput from "./CustomInput/CustomInput"
+import FileInput from "./FileInput/FileInput";
 import * as Yup from "yup";
 import "../Form/_form.scss";
 
 export default function SingUpForm() {
-
-  const CustomInput = ({ labelPlaceholder, labelHelper, ...props }) => {
-    const [field, meta] = useField(props);
-    return (
-      <label className="form__label">
-        {/* <span className={`label__placeholder ${meta.error ? 'error__label' : ''}`}>{labelPlaceholder}</span> */}
-        <input className={`${meta.error && meta.touched ? "error__border" : ''}`}
-          {...field}
-          {...props} />
-        <span className="label__placeholder">{labelPlaceholder}</span>
-        {meta.touched && meta.error ? (
-          <span className="error__helper">{meta.error}</span>
-        ) : <span className="label__helper">{labelHelper}</span>}
-      </label>
-    )
-  }
-  const FileInput = ({ labelUpload, labelPlaceholder, ...props }) => {
-    const [field, meta] = useField(props);
-    return (
-      <label className="file-label">
-        <div className="file-container">
-          <span className="file-upload">{labelUpload}</span>
-          <span className="file-placeholder">{labelPlaceholder}</span>
-          <input className={`${meta.error ? "error__border" : ''}`}
-            {...field}
-            {...props} />
-        </div>
-        {meta.touched && meta.error ? (
-          <span className={`${meta.error ? "error__helper" : ''}`}>{meta.error}</span>
-        ) : null}
-      </label>
-    )
-  }
 
   const [positions, setPositions] = useState([]);
 
@@ -61,27 +30,28 @@ export default function SingUpForm() {
     getPositions()
   }, [])
 
-  const [token, setToken] = useState(null);
+  // const [token, setToken] = useState(null);
 
   useEffect(() => {
     fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
       .then(response => response.json())
-      .then(data => setToken(data.token))
+    // .then(data => setToken(data.token))
   }, [])
 
   const handleSubmit = (values) => {
-    fetch("https://frontend-test-assignment-api.abz.agency/api/v1/users", {
-      method: "POST",
-      body: values,
-      headers: { 'Token': token }
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
+    console.log(values)
+    // fetch("https://frontend-test-assignment-api.abz.agency/api/v1/users", {
+    //   method: "POST",
+    //   body: values,
+    //   headers: { 'Token': token }
+    // })
+    //   .then(response => response.json())
+    //   .then(data => console.log(data))
   }
 
 
   return (
-    <section section className="section" id="sign-up">
+    <section className="section" id="sign-up">
       <h2 className="section__heading">Working with POST request</h2>
 
       <Formik
